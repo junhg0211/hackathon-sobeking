@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="article-main">
+  <div class="modal">
+    <div class="modal-modal modal-primary">
+      <div class="modal-icon">
+        <div class="modal-icon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-receipt-cutoff" viewBox="0 0 16 16">
+            <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+            <path d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293 2.354.646zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118l.137-.274z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="modal-text">
+        <span class="modal-text-amount">₩ 71,000</span><br>
+        <span class="modal-text-name">총 지출</span>
+      </div>
+      <div class="modal-delta">
+        <span class="modal-delta-delta">+ ₩ 8,000</span>
+      </div>
+    </div>
+    <div class="modal-modal modal-secondary">
+      <div class="modal-icon">
+        <div class="modal-icon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-piggy-bank" viewBox="0 0 16 16">
+            <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm1.138-1.496A6.613 6.613 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.602 7.602 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962z"/>
+            <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595zM2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.558 6.558 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.649 4.649 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393zm12.621-.857a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199z"/>
+          </svg>
+        </div>
+      </div>
+      <div class="modal-text">
+        <span class="modal-text-amount">₩ 63,000</span><br>
+        <span class="modal-text-name">총 수입</span>
+      </div>
+      <div class="modal-delta">
+        <span class="modal-delta-delta">+ ₩ 5,000</span>
+      </div>
+    </div>
+  </div>
+  <div class="consumptions">
+    <div class="consumptions-header">
+      <div class="consumptions-title">주간 지출</div>
+      <div class="consumptions-type">
+        <select id="consumptions-select">
+          <option value="week">주간 지출 보기</option>
+          <option value="month">월간 지출 보기</option>
+        </select>
+      </div>
+    </div>
+    <canvas id="consumptions-canvas"></canvas>
+    <a href="#">
+      <button class="consumptions-analyse">소비 패턴 분석</button>
+    </a>
+  </div>
+</div>
+<div class="article-sub">
+  <div class="ranking">
+    <div class="ranking-header">
+      <div class="ranking-header-title">이달의 절약왕</div>
+      <div class="ranking-header-more">
+        <a href="#">See all</a>
+      </div>
+    </div>
+    {% for i in range(4) %}
+    <div class="ranking-row">
+      <div class="ranking-row-place">
+        {{ i + 1 }}
+      </div>
+      <div class="ranking-row-image">
+        <img src="{{ url_for('static', filename='image/my_profile.png') }}">
+      </div>
+      <div class="ranking-row-wow">
+        <span class="ranking-row-wow-name">하눌링</span><br>
+        <span>+ ₩ 2,080</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="annual">
+    <div class="annual-title">연간 지출</div>
+    <canvas id="annual-canvas"></canvas>
+  </div>
+</div>
+{% endblock %}
+
+{% block postcontainer %}
+<script>
+  new Chart(document.getElementById("annual-canvas"), {
+    type: 'line',
+    data: {
+      labels: [" ", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      datasets: [
+        {
+          label: '', // 라벨을 비워 두거나 빈 문자열로 설정
+          data: [73982, 87012, 49218, 80912, 60293, 72102, 90192, 28319],
+          borderColor: "rgba(106, 106, 164, 1)",
+          borderWidth: 4,
+          fill: false,
+          lineTension: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: false,
+            labelString: '일자'
+          }
+        }],
+        yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: false,
+            labelString: '가격'
+          }
+        }]
+      },
+      legend: {
+        display: false, // 범례를 비활성화
+      }
+    }
+  });
+</script>
+<script>
+  // -- navigation selection
+  let index = 1;
+  let selectionItem = document.querySelector(`.nav-item:nth-child(${index})`);
+  selectionItem.classList.add("nav-item-selected");
+</script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock %}

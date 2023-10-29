@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<img src="{{ url_for('static', filename='image/screenshot_mileage.png') }}" style="width: 90%; margin-left: 5%;">
+{% endblock %}
+
+{% block postcontainer %}
+<script>
+  // -- navigation selection
+  let index = 2;
+  let selectionItem = document.querySelector(`.nav-item:nth-child(${index})`);
+  selectionItem.classList.add("nav-item-selected");
+</script>
+{% endblock %}

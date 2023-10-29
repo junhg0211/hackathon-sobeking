@@ -1,0 +1,73 @@
+.article { display: flex; margin-top: 60px; }
+.article-main { flex: 2; margin-right: 60px; }
+.article-sub { flex: 1; }
+
+.modal { display: flex; height: 150px; }
+.modal-modal { flex: 1; display: flex; border-radius: 40px 0 40px 0; }
+.modal-modal div { flex: 2; margin: 20px; }
+.modal-primary { background-color: #6A6AA4; color: white; margin-right: 40px; }
+.modal-secondary { background-color: #F0F0F0; color: #42427D; }
+.modal-icon { flex: 1 !important; }
+.modal-icon-icon {
+    background-color: white;
+    color: #42427D;
+    padding: 16px;
+    display: inline-block;
+    border-radius: 10px 0 10px 0;
+}
+.modal-text-amount { font-size: 24px; margin: 18px 0; display: inline-block; }
+.modal-delta-delta {
+    background-color: #42427D;
+    color: white;
+    display: inline-block;
+    padding: 2px 15px;
+    margin-top: 20px;
+    border-radius: 10px 0 10px 0;
+}
+
+.consumptions { font-weight: bold; margin-top: 40px; }
+.consumptions-header { display: flex; }
+.consumptions-header div { flex: 1; }
+.consumptions-type { text-align: right; }
+.consumptions-type select {
+    font-size: 18px;
+    padding: 8px;
+    border: none;
+    text-align: right;
+}
+.consumptions-title { font-size: 30px; }
+#consumptions-canvas { margin-top: 40px; }
+.consumptions-analyse { 
+    float: right;
+    padding: 8px;
+}
+
+.contents {
+    margin-top: 40px;
+    background-color: #F3F6FF;
+    height: 520px;
+    border-radius: 30px 0 30px 0;
+    padding: 30px;
+}
+.contents :first-child {
+    margin-top: 0;
+}
+
+.ranking { background-color: #F3F6FF; }
+.ranking-header {
+    display: flex;
+    padding: 20px;
+    border-radius: 20px 0 20px 0;
+}
+.ranking-header div { flex: 1; }
+.ranking-header-title { font-size: 24px; font-weight: bold; color: #42427D; }
+.ranking-header-more { text-align: right; }
+.ranking-header-more a { text-decoration: none; color: #5840BB; }
+.ranking-row { display: flex; padding: 16px 0; }
+.ranking-row-place { padding: 18px; flex: 1; }
+.ranking-row-image img { height: 56px; border-radius: 10px 0 10px 0; }
+.ranking-row-wow { flex: 14; margin-left: 20px; padding: 2px; }
+.ranking-row-wow-name { font-size: 18px; }
+
+.annual { margin-top: 40px; }
+.annual-title { font-size: 24px; font-weight: bold; }

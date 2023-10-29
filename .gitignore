@@ -1,0 +1,12 @@
+# backup files
+*.bkp
+*.dtmp
+
+# virtual environment
+venv/
+
+# python cache
+__pycache__/
+
+# secret
+secret.json
